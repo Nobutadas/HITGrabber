@@ -26,12 +26,6 @@ app.get("/", function(req, res){
 	res.sendFile(__dirname + "/www/index.html");
 });
 
-app.get("/hwtf", function(req, res){
-	res.sendFile(__dirname + "/www/index.html");
-	ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
-	count = count + 1;
-	console.log("New user: " + ip + " (" + count + ")");
-});
 
 io.sockets.on("connection", function(socket){
 	fs.readFile(__dirname + "/post.json", 'utf8', function (err,data) {
