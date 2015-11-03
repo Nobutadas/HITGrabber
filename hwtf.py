@@ -68,8 +68,8 @@ def updateJsonFiles(title, url, source, html):
 		print("An error occured while trying to update JSON files")
 
 #### Reddit Configuration options ####
-USERNAME = 'retardebot'
-PASSWORD = 'botbotbot'
+USERNAME = ''
+PASSWORD = ''
 LIMIT = 1
 SUBREDDIT = 'hitsworthturkingfor'
 #### End Configuration Options ####
