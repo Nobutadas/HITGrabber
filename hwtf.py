@@ -37,7 +37,7 @@ def mturkForumSearch():
 				post = str(post).replace('"',"'")
 				title = soup.find("font").text
 				if post != mturkpost:
-					print("MturkForum: " + title + " \n ---------------------------------")
+					print("MturkForum: New post was made \n ---------------------------------")
 					updateJsonFiles("New HIT from MturkForum.com. Check main notifier page for details", url,"mturkforum.com",post)
 					mturkpost = post
 

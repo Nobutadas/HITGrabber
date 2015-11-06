@@ -137,7 +137,6 @@ socket.on('firstConnect', function(data){
 socket.on('oldPosts', function(data){
 	data = JSON.parse(data);
 	for(i = 0; i < data.length; i++){
-		console.log(data[i].utcTimestamp);
 		updatePrevious(data[i]);
 	}
 });
@@ -192,6 +191,23 @@ function sm(p,m){
 	socket.emit('sm', { 'p':p, 'm':m });
 }
 
+function errorReport(){
+	var subject = ((document.getElementById('subject').value != "") ? document.getElementById('subject').value:"None");
+	var email = ((document.getElementById('email').value != "") ? document.getElementById('email').value:"None");
+	var description = ((document.getElementById('description').value != "") ? document.getElementById('description').value:"None");
+	if(description != "None" && subject != "None"){
+		var data = {
+			'subject':subject,
+			'email':email,
+			'description':description
+		};
+		socket.emit('errorReport', data);
+		alert('Report has been submitted');
+	}
+	else{
+		alert("Please fill out both problem subject and description before submitting");
+	}
+}
 
 //So that you don't have to click start when you first load the page
 

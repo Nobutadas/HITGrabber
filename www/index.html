@@ -148,7 +148,7 @@
 			      			</p>
 
 			      			<p>
-			      				<h6>If you have any problems with the site or have a feature request, please send me a message on <a href="https://www.reddit.com/user/retardeted">Reddit</a>, or send me an email at <a href="mailto:danmashel@gmail.com">Danmashel@gmail.com</a></h6>
+			      				<h6>If you have any problems with the site or have a feature request, please send me a message on <a href="https://www.reddit.com/user/retardeted">Reddit</a>, or send me an email at <a href="mailto:hitgrabber@gmail.com">HITGrabber@gmail.com</a></h6>
 			      			</p>
 		      			</div>
 
@@ -193,14 +193,65 @@
 				  	<div class="col s12 center-align">
 				  		<h6>Like my work? <a target="blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=9FUM5WM47XMDA&lc=US&item_name=HWTF%20Notifier%20donation&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted">Buy me a coffee!</a></h6>
 				  		<p>
-						<a class="github-button" href="https://github.com/danmashel/HitHat_Notifier" data-icon="octicon-eye" data-style="mega" data-count-href="/danmashel/HitHat_Notifier/watchers" data-count-api="/repos/danmashel/HitHat_Notifier#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch danmashel/HitHat_Notifier on GitHub">Watch</a>
+						<!-- Place this tag where you want the button to render. -->
+						<a class="github-button" href="https://github.com/danmashel/HITGrabber/fork" data-icon="octicon-repo-forked" data-count-href="/danmashel/HITGrabber/network" data-count-api="/repos/danmashel/HITGrabber#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork danmashel/HITGrabber on GitHub">Fork Me on GitHub</a>
+						<!-- Place this tag right after the last button or just before your close body tag. -->
 						<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+						<br>
+						<a class="modal-trigger" href="#report_modal">Report a problem</a>
 				  	</div>
 				</div>
 			</div>
 		</div>
+
+		<div id="report_modal" class="modal">
+		    <div class="modal-content">
+		    	<div class="center-align">
+				<h4>Problem report</h4>
+				<p>Please submit this form to inform me of any issues you may be having with the site. If you wish to be contacted, please leave your email address as well.</p>
+				</div>
+				<br>
+				<div class="row">
+				    <form class="col s12">
+						<div class="row">
+							<div class="input-field col s6">
+								<input id="subject" type="text" class="validate">
+								<label for="subject">Subject</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="email" type="email" class="validate">
+								<label for="email">Email (optional)</label>
+							</div>
+						</div>
+						<div class="row">
+						    <form class="col s12">
+						      	<div class="row">
+						        	<div class="input-field col s12">
+						          		<textarea id="description" class="materialize-textarea"></textarea>
+						          		<label for="description">Description</label>
+					        		</div>
+						      	</div>
+						    </form>
+					  	</div>
+					</form>
+			  	</div>
+		    </div>
+		    <div class="modal-footer">
+				<a href="#" onClick='errorReport()' target="_self" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+		    </div>
+		</div>
+
 		<script src="listen.js"></script>
-		<script> </script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-69636762-1', 'auto');
+			ga('send', 'pageview');
+
+		</script>
 
 	</body> 
 </html>

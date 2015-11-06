@@ -1,6 +1,6 @@
 
 //OPTIONS//
-var port = "80"; //the port which the server will start on. If port 80 then server must be run as root.
+var port = "1337"; //the port which the server will start on. If port 80 then server must be run as root.
 
 //END OPTIONS//
 
@@ -12,6 +12,7 @@ var socketIO = require('socket.io');
 var path = require('path');
 var INotifyWait = require('inotifywait');
 var fs = require('fs');
+var nodemailer = require('nodemailer');
 
 var app = express();
 console.log(__dirname);
@@ -47,6 +48,23 @@ io.sockets.on("connection", function(socket){
 			console.log("Broadcasted message: " + data.m);
 			io.sockets.emit('smr',data.m);
 		}
+	});	
+
+	socket.on('errorReport', function(data){
+		console.log("An error report was submitted");
+		var transporter = nodemailer.createTransport({
+		    service: 'gmail',
+		    auth: {
+		        user: '',
+		        pass: 's'
+		    }
+		});
+		transporter.sendMail({
+		    from: 'hitgrabber@gmail.com',
+		    to: 'hitgrabber@gmail.com',
+		    subject: data.subject + " - from: " + data.email,
+		    text: data.description
+		});
 	});		
 });
 
